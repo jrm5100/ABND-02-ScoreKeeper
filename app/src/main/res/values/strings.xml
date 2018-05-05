@@ -1,0 +1,18 @@
+<resources >
+    <string name="app_name">ScoreKeeper</string>
+    <string name="home">Home</string>
+    <string name="hit">hit</string>
+    <string name="error">error</string>
+    <string name="out">out</string>
+    <string name="run_scored">Run Scored</string>
+    <string name="hits">%1$d hits</string>
+    <string name="errors">%1$d errors</string>
+    <string name="outs">%1$d outs</string>
+    <string name="away">Away</string>
+    <string name="top_of_the">Top of the %1$d</string>
+    <string name="bottom_of_the">Bottom of the %1$d</string>
+    <string name="batting_home">Batting: Home</string>
+    <string name="batting_away">Batting: Away</string>
+    <string name="reset">Reset</string>
+    <string name="_0">0</string>
+</resources>

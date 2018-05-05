@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.scorekeeper.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- Need to wrap everything in a single layout to work with ScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Score section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp">
+
+                <!-- Home team side -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/home_panel">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home"
+                        android:textSize="20sp"
+                        android:textColor="#616161"
+                        android:fontFamily="sans-serif-medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/score_home"
+                        android:text="@string/_0"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textSize="56sp"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif-light"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/hits_home"
+                        android:text="@string/hits"
+                        android:paddingBottom="8dp"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif-light"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/errors_home"
+                        android:text="@string/errors"
+                        android:paddingBottom="8dp"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif-light"/>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray">
+                </View>
+
+                <!-- Away team side -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/away_panel">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/away"
+                        android:textSize="20sp"
+                        android:textColor="#616161"
+                        android:fontFamily="sans-serif-medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/score_away"
+                        android:text="0"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textSize="56sp"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif-light"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/hits_away"
+                        android:text="@string/hits"
+                        android:paddingBottom="8dp"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif-light"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/errors_away"
+                        android:text="@string/errors"
+                        android:paddingBottom="8dp"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:fontFamily="sans-serif-light"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- End Score section -->
+
+            <!-- Current Status -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/inning"
+                    android:text="@string/top_of_the"
+                    android:paddingBottom="8dp"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/batting"
+                    android:text="@string/batting_away"
+                    android:paddingBottom="8dp"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/outs"
+                    android:text="@string/outs"
+                    android:paddingBottom="16dp"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium"/>
+            </LinearLayout>
+            <!-- End Current Status -->
+
+            <!-- Hit/Error/Out Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hit"
+                    android:onClick="addHit"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/holo_green_dark"
+                    android:textColor="#FFFFFF"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error"
+                    android:onClick="addError"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/holo_orange_dark"
+                    android:textColor="#FFFFFF"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/out"
+                    android:onClick="addOut"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/holo_red_dark"
+                    android:textColor="#FFFFFF"/>
+            </LinearLayout>
+            <!-- End Hit/Error/Out Buttons -->
+
+            <!-- Run Scored Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/run_scored"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="addRun"
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"/>
+
+            <!-- Reset Button -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/reset"
+                android:onClick="resetGame"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.v7.widget.LinearLayoutCompat>
