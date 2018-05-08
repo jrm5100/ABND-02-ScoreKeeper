@@ -35,38 +35,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increase the score for the team that is batting.
+     * Increase the score
      */
-    public void addRun(View v) {
-        if (isTopOfInning) {
-            scoreAway = scoreAway + 1;
-        } else {
-            scoreHome = scoreHome + 1;
-        }
+    public void addRunHome(View v) {
+        scoreHome = scoreHome + 1;
+        displayScore();
+    }
+
+    public void addRunAway(View v) {
+        scoreAway = scoreAway + 1;
         displayScore();
     }
 
     /**
-     * Increase the hits for the team that is batting.
+     * Increase the hits
      */
-    public void addHit(View v) {
-        if (isTopOfInning) {
-            hitsAway = hitsAway + 1;
-        } else {
-            hitsHome = hitsHome + 1;
-        }
+    public void addHitHome(View v) {
+        hitsHome = hitsHome + 1;
+        displayHits();
+    }
+
+    public void addHitAway(View v) {
+        hitsAway = hitsAway + 1;
         displayHits();
     }
 
     /**
-     * Increase the errors for the team that is fielding
+     * Increase the errors
      */
-    public void addError(View v) {
-        if (isTopOfInning) {
-            errorsHome = errorsHome + 1;
-        } else {
-            errorsAway = errorsAway + 1;
-        }
+    public void addErrorHome(View v) {
+        errorsHome = errorsHome + 1;
+        displayErrors();
+    }
+
+    public void addErrorAway(View v) {
+        errorsAway = errorsAway + 1;
         displayErrors();
     }
 
