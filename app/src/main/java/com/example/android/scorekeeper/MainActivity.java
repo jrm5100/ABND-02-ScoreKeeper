@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void addRun(View v) {
         if (isTopOfInning) {
-            scoreAway = scoreAway + 1;
+            scoreAway += 1;
         } else {
-            scoreHome = scoreHome + 1;
+            scoreHome += 1;
         }
         displayScore();
     }
@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void addHit(View v) {
         if (isTopOfInning) {
-            hitsAway = hitsAway + 1;
+            hitsAway += 1;
         } else {
-            hitsHome = hitsHome + 1;
+            hitsHome += 1;
         }
         displayHits();
     }
@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void addError(View v) {
         if (isTopOfInning) {
-            errorsHome = errorsHome + 1;
+            errorsHome += 1;
         } else {
-            errorsAway = errorsAway + 1;
+            errorsAway += 1;
         }
         displayErrors();
     }
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
      * Add an out, adjusting the inning if needed
      */
     public void addOut(View v) {
-        outs = outs + 1;
+        outs += 1;
 
         /* Increment the half-inning if there are now 3 outs */
         if (outs == 3) {
